@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jeff The Killer Jumpscare</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      background: black;
+      overflow: hidden;
+    }
+    #startBtn {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      padding: 20px 40px;
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 10000;
+    }
+    #jeffVideo {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <button id="startBtn">Clique aqui</button>
+  <video id="jeffVideo" src="https://i.imgur.com/znZtYp0.mp4"></video>
+  <!-- Cole aqui o link do file.io -->
+  <audio id="scream" src="https://raw.githubusercontent.com/Frost3434/aaaaa/main/Jeff%20the%20killer%20-%20Scream%20%26%20Face.mp3
+"></audio>
+
+  <script>
+    const btn = document.getElementById("startBtn");
+    const video = document.getElementById("jeffVideo");
+    const scream = document.getElementById("scream");
+
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";
+      setTimeout(() => {
+        video.style.display = "block";
+        video.play();
+        scream.play();
+        document.body.requestFullscreen?.();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
